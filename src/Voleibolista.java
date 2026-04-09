@@ -1,16 +1,17 @@
-public class Ciclista extends Atleta implements Evaluable {
-    private double distanciaRecorrida;
-    private double duracionHoras;
+public class Voleibolista extends Atleta implements Evaluable {
+    private int saquesExitosos;
+    private int bloqueosRealizados;
 
-    public Ciclista(String nombreCompleto, int edadAnios, int horasEntrenadas, double distanciaRecorrida, double duracionHoras) {
+    public Voleibolista(String nombreCompleto, int edadAnios, int horasEntrenadas,
+                        int saquesExitosos, int bloqueosRealizados) {
         super(nombreCompleto, edadAnios, horasEntrenadas);
-        this.distanciaRecorrida = distanciaRecorrida;
-        this.duracionHoras = duracionHoras;
+        this.saquesExitosos = saquesExitosos;
+        this.bloqueosRealizados = bloqueosRealizados;
     }
 
     @Override
     public double calcularRendimiento() {
-        return distanciaRecorrida / duracionHoras;
+        return (saquesExitosos * 2) + (bloqueosRealizados * 3);
     }
 
     @Override
